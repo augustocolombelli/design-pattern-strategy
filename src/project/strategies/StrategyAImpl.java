@@ -6,4 +6,8 @@ public class StrategyAImpl implements Strategy {
 		return value * 0.03;
 	}
 
+	@Override
+	public String toString() {
+		return "Strategy A";
+	}
 }

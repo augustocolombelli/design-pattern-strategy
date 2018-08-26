@@ -1,22 +1,33 @@
 package project;
 
-import project.strategies.Strategy;
+import project.strategies.ExecuteStrategy;
 import project.strategies.StrategyAImpl;
 import project.strategies.StrategyBImpl;
 import project.strategies.StrategyCImpl;
+import project.strategies.StrategyDImpl;
 
 public class RunStrategies {
 
 	public static void main(String[] args) {
-		Strategy strategyA = new StrategyAImpl();
-		Strategy strategyB = new StrategyBImpl();
-		Strategy strategyC = new StrategyCImpl();
 		
 		Double valueToCalculate = 100.0;
 		System.out.println("Value to calculate is: "+ valueToCalculate);
-		System.out.println("Result of Strategy A is: " + strategyA.calculate(valueToCalculate));
-		System.out.println("Result of Strategy B is: " + strategyB.calculate(valueToCalculate));
-		System.out.println("Result of Strategy A is: " + strategyC.calculate(valueToCalculate));
+		
+		//Execute the Strategy A
+		ExecuteStrategy executeStrategyA = new ExecuteStrategy(new StrategyAImpl());
+		executeStrategyA.execute(valueToCalculate);
+		
+		//Execute the Strategy B
+		ExecuteStrategy executeStrategyB = new ExecuteStrategy(new StrategyBImpl());
+		executeStrategyB.execute(valueToCalculate);
+		
+		//Execute the Strategy C
+		ExecuteStrategy executeStrategyC = new ExecuteStrategy(new StrategyCImpl());
+		executeStrategyC.execute(valueToCalculate);
+		
+		//Example of new rule that the Product Owner needs for the next month
+		ExecuteStrategy executeStrategyD = new ExecuteStrategy(new StrategyDImpl());
+		executeStrategyD.execute(valueToCalculate);
 	}
 
 }

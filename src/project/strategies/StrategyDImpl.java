@@ -1,13 +1,13 @@
 package project.strategies;
 
-public class StrategyBImpl implements Strategy {
+public class StrategyDImpl implements Strategy {
 
 	public double calculate(Double value) {
-		return value * 0.05;
+		return (value * 0.1) + 10.0;
 	}
 	
 	public String toString() {
-		return "Strategy B";
+		return "Strategy D";
 	}
-	
+
 }
